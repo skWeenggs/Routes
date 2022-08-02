@@ -23,9 +23,7 @@ const PORT = process.env.PORT || 3800;
 
 const uri = process.env.MONGO_DB;
 
-// app.get("/", (req, res) => {
-//   res.send("have connected!");
-// });
+
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
