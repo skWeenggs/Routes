@@ -4,7 +4,7 @@ const { MongoTopologyClosedError } = require("mongodb");
 
 const mongoose = require("mongoose");
 const User = require("./model/Post");
-// const userRouter= require("./Routes/Routes")
+
 const cors=require('cors');
 require("dotenv").config();
 
