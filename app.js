@@ -136,11 +136,11 @@ app.get("/users", async(req, res,next) => {
     const userData = await User
       .find(q ? {
         "$or":[
-          {name:{$regex:`${q}`}},
-          {city:{$regex:`${q}`}},
-          {email:{$regex:`${q}`}},
-          {message:{$regex:`${q}`}},
-          {contact_no:{$regex:`${q}`}},
+          {name:{$regex:`${q}`,"$options":"i"}},
+          {city:{$regex:`${q}`,"$options":"i"}},
+          {email:{$regex:`${q}`,"$options":"i"}},
+          {message:{$regex:`${q}`,"$options":"i"}},
+          {contact_no:{$regex:`${q}`,"$options":"i"}},
         ]
       }:{}
       )
@@ -155,11 +155,11 @@ app.get("/users", async(req, res,next) => {
       }else{
          userCount=await User.find(q ? {
           "$or":[
-            {name:{$regex:`${q}`}},
-            {city:{$regex:`${q}`}},
-            {email:{$regex:`${q}`}},
-            {message:{$regex:`${q}`}},
-            {contact_no:{$regex:`${q}`}},
+            {name:{$regex:`${q}`,"$options":"i"}},
+            {city:{$regex:`${q}`,"$options":"i"}},
+            {email:{$regex:`${q}`,"$options":"i"}},
+            {message:{$regex:`${q}`,"$options":"i"}},
+            {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
         )
@@ -270,11 +270,11 @@ app.get("/users", async(req, res,next) => {
       if(q && value==='name' && sort=='asc'){
         userCount=await User.find(q ? {
           "$or":[
-            {name:{$regex:`${q}`}},
-            {city:{$regex:`${q}`}},
-            {email:{$regex:`${q}`}},
-            {message:{$regex:`${q}`}},
-            {contact_no:{$regex:`${q}`}},
+            {name:{$regex:`${q}`,"$options":"i"}},
+            {city:{$regex:`${q}`,"$options":"i"}},
+            {email:{$regex:`${q}`,"$options":"i"}},
+            {message:{$regex:`${q}`,"$options":"i"}},
+            {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
         )
@@ -289,11 +289,11 @@ app.get("/users", async(req, res,next) => {
       }else if(q && value==='name' && sort=='desc'){
         userCount=await User.find(q ? {
           "$or":[
-            {name:{$regex:`${q}`}},
-            {city:{$regex:`${q}`}},
-            {email:{$regex:`${q}`}},
-            {message:{$regex:`${q}`}},
-            {contact_no:{$regex:`${q}`}},
+            {name:{$regex:`${q}`,"$options":"i"}},
+            {city:{$regex:`${q}`,"$options":"i"}},
+            {email:{$regex:`${q}`,"$options":"i"}},
+            {message:{$regex:`${q}`,"$options":"i"}},
+            {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
         )
@@ -308,11 +308,11 @@ app.get("/users", async(req, res,next) => {
       }else if(q && value==='email' && sort=='asc'){
         userCount=await User.find(q ? {
           "$or":[
-            {name:{$regex:`${q}`}},
-            {city:{$regex:`${q}`}},
-            {email:{$regex:`${q}`}},
-            {message:{$regex:`${q}`}},
-            {contact_no:{$regex:`${q}`}},
+            {name:{$regex:`${q}`,"$options":"i"}},
+            {city:{$regex:`${q}`,"$options":"i"}},
+            {email:{$regex:`${q}`,"$options":"i"}},
+            {message:{$regex:`${q}`,"$options":"i"}},
+            {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
         )
@@ -327,11 +327,11 @@ app.get("/users", async(req, res,next) => {
       }else if(q && value==='email'&& sort=='desc'){
         userCount=await User.find(q ? {
           "$or":[
-            {name:{$regex:`${q}`}},
-            {city:{$regex:`${q}`}},
-            {email:{$regex:`${q}`}},
-            {message:{$regex:`${q}`}},
-            {contact_no:{$regex:`${q}`}},
+            {name:{$regex:`${q}`,"$options":"i"}},
+            {city:{$regex:`${q}`,"$options":"i"}},
+            {email:{$regex:`${q}`,"$options":"i"}},
+            {message:{$regex:`${q}`,"$options":"i"}},
+            {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
         )
@@ -346,11 +346,11 @@ app.get("/users", async(req, res,next) => {
       }else if(q && value==='city' && sort=='asc'){
         userCount=await User.find(q ? {
           "$or":[
-            {name:{$regex:`${q}`}},
-            {city:{$regex:`${q}`}},
-            {email:{$regex:`${q}`}},
-            {message:{$regex:`${q}`}},
-            {contact_no:{$regex:`${q}`}},
+            {name:{$regex:`${q}`,"$options":"i"}},
+            {city:{$regex:`${q}`,"$options":"i"}},
+            {email:{$regex:`${q}`,"$options":"i"}},
+            {message:{$regex:`${q}`,"$options":"i"}},
+            {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
         )
@@ -365,11 +365,11 @@ app.get("/users", async(req, res,next) => {
       }else if(q && value==='city'&& sort=='desc'){
         userCount=await User.find(q ? {
           "$or":[
-            {name:{$regex:`${q}`}},
-            {city:{$regex:`${q}`}},
-            {email:{$regex:`${q}`}},
-            {message:{$regex:`${q}`}},
-            {contact_no:{$regex:`${q}`}},
+            {name:{$regex:`${q}`,"$options":"i"}},
+            {city:{$regex:`${q}`,"$options":"i"}},
+            {email:{$regex:`${q}`,"$options":"i"}},
+            {message:{$regex:`${q}`,"$options":"i"}},
+            {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
         )
