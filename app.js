@@ -144,6 +144,7 @@ app.get("/users", async(req, res,next) => {
         ]
       }:{}
       )
+      .collation({locale:"en"})
       .sort(sort)
       .limit(limit)
       .skip(page*limit)
@@ -170,16 +171,19 @@ app.get("/users", async(req, res,next) => {
 
       if(value=='name' && sort == 'asc'){
         console.log("call")
-          sortData = await User.find().sort({
+          sortData = await User.find()
+          .collation({locale:"en"})
+          .sort({
           name: 1,
-
         })
         .limit(limit)
         .skip(limit * page);
         console.log("asc",sortData);
         // res.send(sortData);
       }else if(value==='name' && sort=='desc'){
-          sortData = await User.find().sort({
+          sortData = await User.find()
+          .collation({locale:"en"})
+          .sort({
           name: -1,
 
         })
@@ -189,7 +193,7 @@ app.get("/users", async(req, res,next) => {
         // res.send(sortData)
       }else if(value=='email' && sort == 'asc'){
         console.log("call")
-          sortData = await User.find().sort({
+          sortData = await User.find() .collation({locale:"en"}).sort({
           email: 1,
         })
         .limit(limit)
@@ -197,7 +201,7 @@ app.get("/users", async(req, res,next) => {
         console.log("asc",sortData);
         // res.send(sortData);
       }else if(value==='email' && sort=='desc'){
-        sortData = await User.find().sort({
+        sortData = await User.find() .collation({locale:"en"}).sort({
         email: -1,
       })
       .limit(limit)
@@ -205,7 +209,7 @@ app.get("/users", async(req, res,next) => {
       console.log("desc",sortData);
       // res.send(sortData)
     }else if(value==='city' && sort=='asc'){
-      sortData = await User.find().sort({
+      sortData = await User.find() .collation({locale:"en"}).sort({
       city: 1,
 
     })
@@ -277,7 +281,7 @@ app.get("/users", async(req, res,next) => {
             {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
-        )
+        ) .collation({locale:"en"})
         .sort({
           name:1,
         })
@@ -296,7 +300,7 @@ app.get("/users", async(req, res,next) => {
             {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
-        )
+        ).collation({locale:"en"})
         .sort({
            name:-1,
         })
@@ -315,7 +319,7 @@ app.get("/users", async(req, res,next) => {
             {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
-        )
+        ) .collation({locale:"en"})
         .sort({
           email: 1,        
         })
@@ -334,7 +338,7 @@ app.get("/users", async(req, res,next) => {
             {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
-        )
+        ) .collation({locale:"en"})
         .sort({
            email:-1,
         })
@@ -353,7 +357,7 @@ app.get("/users", async(req, res,next) => {
             {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
-        )
+        ) .collation({locale:"en"})
         .sort({
         city:1,
         })
@@ -372,7 +376,7 @@ app.get("/users", async(req, res,next) => {
             {contact_no:{$regex:`${q}`,"$options":"i"}},
           ]
         }:{}
-        )
+        ) .collation({locale:"en"})
         .sort({
            city:-1,
         })
