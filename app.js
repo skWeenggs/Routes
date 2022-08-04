@@ -220,7 +220,6 @@ app.get("/users", async(req, res,next) => {
   }else if(value==='city' && sort=='desc'){
     sortData = await User.find().sort({
     city: -1,
-
   })
   .limit(limit)
   .skip(limit * page);
